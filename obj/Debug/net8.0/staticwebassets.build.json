@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "75HGwUtRQRbILZXaH6rTDhCWyktowFYMhVHVzEKSDd4=",
+  "Source": "API_JWTToken_Products",
+  "BasePath": "_content/API_JWTToken_Products",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
