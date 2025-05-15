@@ -18,11 +18,11 @@ namespace API_JWTToken_Products.Controllers
             _context = context;
         }
 
-        [HttpGet]
+        [HttpGet("GetAll")]
         public async Task<IActionResult> Get() => Ok(await _context.Products.ToListAsync());
 
 
-        [HttpGet("{id}")]
+        [HttpGet("GetbyID{id}")]
         public async Task<IActionResult> GetById(int id)
         {
             var product = await _context.Products.FindAsync(id);
@@ -32,7 +32,7 @@ namespace API_JWTToken_Products.Controllers
             return Ok(product);
         }
 
-        [HttpPost]
+        [HttpPost("AddProduct")]
         public async Task<IActionResult> Post(Product product)
         {
             _context.Products.Add(product);
@@ -40,7 +40,7 @@ namespace API_JWTToken_Products.Controllers
             return Ok(product);
         }
 
-        [HttpPut("{id}")]
+        [HttpPut("UpdateProduct{id}")]
         public async Task<IActionResult> Put(int id, [FromBody] Product updatedProduct)
         {
             if (id != updatedProduct.Id)
@@ -61,7 +61,7 @@ namespace API_JWTToken_Products.Controllers
             });
         }
 
-        [HttpDelete("{id}")]
+        [HttpDelete("DeleteProduct{id}")]
         public async Task<IActionResult> Delete(int id)
         {
             var product = await _context.Products.FindAsync(id);
